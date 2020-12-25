@@ -9,13 +9,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import co.com.micha3lvega.product.services.exception.ErrorInfo;
-import co.com.micha3lvega.product.services.exception.brand.BrandExistException;
-import co.com.micha3lvega.product.services.exception.brand.BrandNoExistException;
 
 @ControllerAdvice
 public class ErrorHandlerCustomException {
 
-	@ExceptionHandler({ BrandExistException.class, BrandNoExistException.class })
+	@ExceptionHandler(RuntimeException.class)
 	public ResponseEntity<ErrorInfo> methodArgumentNotValidException(HttpServletRequest request, RuntimeException e) {
 
 		ResponseStatus responseStatus = null;
