@@ -1,12 +1,15 @@
 package co.com.micha3lvega.product.services.services.impl;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.com.micha3lvega.product.services.dto.BrandDTO;
-import co.com.micha3lvega.product.services.exception.BrandExistException;
-import co.com.micha3lvega.product.services.exception.BrandNoExistException;
+import co.com.micha3lvega.product.services.exception.brand.BrandExistException;
+import co.com.micha3lvega.product.services.exception.brand.BrandNoExistException;
 import co.com.micha3lvega.product.services.model.Brand;
 import co.com.micha3lvega.product.services.repository.BrandRepository;
 import co.com.micha3lvega.product.services.services.IBrandServices;
@@ -20,6 +23,14 @@ public class BrandServices implements IBrandServices {
 
 	@Autowired
 	private ModelMapper mapper;
+	
+	@Override
+	public List<BrandDTO> findAll() {
+		return repository.findAll().stream().map(brand -> {
+			return mapper.map(brand, BrandDTO.class);
+		}).collect(Collectors.toList());
+	}
+
 
 	@Override
 	public BrandDTO findById(String id) throws BrandNoExistException {
@@ -75,5 +86,16 @@ public class BrandServices implements IBrandServices {
 		return mapper.map(obj, BrandDTO.class);
 
 	}
+
+
+	@Override
+	public void delete(String id) throws BrandNoExistException{
+
+		// Buscar que exista la entidad
+		Brand brand = repository.findById(id).orElseThrow(() -> new BrandNoExistException());
+		repository.delete(brand);
+		
+	}
+
 
 }

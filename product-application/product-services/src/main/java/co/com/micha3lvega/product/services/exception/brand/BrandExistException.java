@@ -1,4 +1,4 @@
-package co.com.micha3lvega.product.services.exception;
+package co.com.micha3lvega.product.services.exception.brand;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
