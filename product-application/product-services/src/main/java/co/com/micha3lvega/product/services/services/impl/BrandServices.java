@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import co.com.micha3lvega.product.services.dto.BrandDTO;
 import co.com.micha3lvega.product.services.exception.brand.BrandExistException;
@@ -25,6 +26,7 @@ public class BrandServices implements IBrandServices {
 	private ModelMapper mapper;
 
 	@Override
+	@Transactional(readOnly = true)
 	public List<BrandDTO> findAll() {
 		return repository.findAll().stream().map(brand -> {
 			return mapper.map(brand, BrandDTO.class);
@@ -32,6 +34,7 @@ public class BrandServices implements IBrandServices {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public BrandDTO findById(String id) {
 
 		Brand brand = repository.findById(id).orElseThrow(() -> new BrandNoExistException());
@@ -39,6 +42,7 @@ public class BrandServices implements IBrandServices {
 	}
 
 	@Override
+	@Transactional
 	public BrandDTO insert(BrandDTO brand) {
 
 		// Normalizar nombre
@@ -58,6 +62,7 @@ public class BrandServices implements IBrandServices {
 	}
 
 	@Override
+	@Transactional
 	public BrandDTO update(BrandDTO brand) {
 
 		if (brand == null || brand.getId() == null) {
@@ -87,6 +92,7 @@ public class BrandServices implements IBrandServices {
 	}
 
 	@Override
+	@Transactional
 	public void delete(String id) {
 
 		// Buscar que exista la entidad
