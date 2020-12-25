@@ -23,7 +23,7 @@ public class BrandServices implements IBrandServices {
 
 	@Autowired
 	private ModelMapper mapper;
-	
+
 	@Override
 	public List<BrandDTO> findAll() {
 		return repository.findAll().stream().map(brand -> {
@@ -31,16 +31,15 @@ public class BrandServices implements IBrandServices {
 		}).collect(Collectors.toList());
 	}
 
-
 	@Override
-	public BrandDTO findById(String id) throws BrandNoExistException {
+	public BrandDTO findById(String id) {
 
 		Brand brand = repository.findById(id).orElseThrow(() -> new BrandNoExistException());
 		return mapper.map(brand, BrandDTO.class);
 	}
 
 	@Override
-	public BrandDTO insert(BrandDTO brand) throws BrandExistException {
+	public BrandDTO insert(BrandDTO brand) {
 
 		// Normalizar nombre
 		if (brand != null && brand.getName() != null) {
@@ -59,7 +58,7 @@ public class BrandServices implements IBrandServices {
 	}
 
 	@Override
-	public BrandDTO update(BrandDTO brand) throws BrandNoExistException {
+	public BrandDTO update(BrandDTO brand) {
 
 		if (brand == null || brand.getId() == null) {
 			throw new BrandNoExistException();
@@ -87,15 +86,13 @@ public class BrandServices implements IBrandServices {
 
 	}
 
-
 	@Override
-	public void delete(String id) throws BrandNoExistException{
+	public void delete(String id) {
 
 		// Buscar que exista la entidad
 		Brand brand = repository.findById(id).orElseThrow(() -> new BrandNoExistException());
 		repository.delete(brand);
-		
-	}
 
+	}
 
 }
