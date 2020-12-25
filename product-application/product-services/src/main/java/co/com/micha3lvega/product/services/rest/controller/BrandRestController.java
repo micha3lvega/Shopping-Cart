@@ -34,7 +34,7 @@ public class BrandRestController {
 	}
 
 	@GetMapping("/{id}")
-	@ApiOperation(value = "Obtiene una marca por su ID", produces = "application/json")
+	@ApiOperation(produces = "application/json", notes = "El ID de la marca es obligatorio", value = "Obtener una marca por su ID")
 	public BrandDTO findById(@PathVariable("id") String id) {
 		return brandServices.findById(id);
 	}
