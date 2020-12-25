@@ -9,7 +9,6 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,8 +20,8 @@ import io.swagger.annotations.ApiModelProperty.AccessMode;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "id", "name", "create_date", "last_update" })
 @ApiModel(description = "Marca del producto", value = "Marca")
+@JsonPropertyOrder({ "id", "name", "create_date", "last_update" })
 public class BrandDTO implements Serializable {
 
 	private static final long serialVersionUID = -2576484819029903329L;
