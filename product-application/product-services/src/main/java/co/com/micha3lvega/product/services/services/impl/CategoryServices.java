@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import co.com.micha3lvega.product.services.dto.CategoryDTO;
 import co.com.micha3lvega.product.services.exception.category.CategoryExistException;
@@ -25,6 +26,7 @@ public class CategoryServices implements ICategoryServices {
 	private ModelMapper mapper;
 
 	@Override
+	@Transactional(readOnly = true)
 	public List<CategoryDTO> findAll() {
 		return repository.findAll().stream().map(category -> {
 			return mapper.map(category, CategoryDTO.class);
@@ -32,6 +34,7 @@ public class CategoryServices implements ICategoryServices {
 	}
 
 	@Override
+	@Transactional
 	public void delete(String id) {
 
 		// Buscar que exista la entidad
@@ -41,6 +44,7 @@ public class CategoryServices implements ICategoryServices {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public CategoryDTO findById(String id) {
 
 		// Buscar que exista la entidad
@@ -50,6 +54,7 @@ public class CategoryServices implements ICategoryServices {
 	}
 
 	@Override
+	@Transactional
 	public CategoryDTO insert(CategoryDTO category) {
 
 		// Normalizar nombre
@@ -70,6 +75,7 @@ public class CategoryServices implements ICategoryServices {
 	}
 
 	@Override
+	@Transactional
 	public CategoryDTO update(CategoryDTO category) {
 
 		if (category == null || category.getId() == null) {
@@ -90,7 +96,7 @@ public class CategoryServices implements ICategoryServices {
 		if (findCategory != null && !currentCategory.getId().equals(findCategory.getId())) {
 			throw new CategoryExistException();
 		}
-		
+
 		// Actualizar
 		Category updateCategory = repository.save(mapper.map(category, Category.class));
 
