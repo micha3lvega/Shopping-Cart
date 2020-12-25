@@ -3,6 +3,9 @@ package co.com.micha3lvega.product.services.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -20,6 +23,9 @@ public class CategoryDTO implements Serializable {
 	private static final long serialVersionUID = 5868687704869054058L;
 
 	private String id;
+
+	@NotNull(message = "El nombre es obligatorio")
+	@Size(min = 2, message = "El nombre de la categoria es muy corto")
 	private String name;
 
 	private Date createDate;
