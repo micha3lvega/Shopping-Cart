@@ -40,10 +40,4 @@ public class Image implements Serializable {
 
 	private String contentType;
 
-	@CreatedDate
-	private Date createDate;
-
-	@LastModifiedDate
-	private Date lastUpdate;
-
 }
