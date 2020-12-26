@@ -1,5 +1,6 @@
 package co.com.micha3lvega.product.services.dto;
 
+import java.io.InputStream;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -19,8 +20,9 @@ public class ImageDTO implements Serializable {
 	private static final long serialVersionUID = -3388733019000246496L;
 
 	private String id;
+	private Long size;
 	private String name;
-	private String type;
-	private byte[] data;
+	private InputStream data;
+	private String contentType;
 
 }
