@@ -47,14 +47,12 @@ public class ProductDTO implements Serializable {
 	private ImageDTO image;
 
 	@Size(min = 2, message = "La descripcion del producto es muy corto")
-	@ApiModelProperty(position = 4, value = "Descripcion del producto", example = "Descripcion de ejemplo")
+	@ApiModelProperty(value = "Descripcion del producto", example = "Descripcion de ejemplo")
 	private String description;
 
-	@Size(min = 2, message = "El estado del producto es muy corto")
 	@ApiModelProperty(value = "Estado del producto", example = "ACTIVE,INACTIVE")
 	private StateDTO state;
 
-	@Digits(integer = 3, fraction = 2)
 	@DecimalMin(value = "0.0", inclusive = false)
 	@ApiModelProperty(value = "Precio del producto", example = "1")
 	private BigDecimal price;
@@ -84,10 +82,10 @@ public class ProductDTO implements Serializable {
 	@NotNull(message = "La unidad de medida es obligatoria")
 	private UnitOfMeasurementDTO unitOfMeasurement;
 
-	@ApiModelProperty(position = 9, value = "Fecha de creacion del producto", example = "2020-12-25T23:08:29.735Z", accessMode = AccessMode.READ_ONLY)
+	@ApiModelProperty(value = "Fecha de creacion del producto", example = "2020-12-25T23:08:29.735Z", accessMode = AccessMode.READ_ONLY)
 	private Date createDate;
 
-	@ApiModelProperty(position = 10, value = "Fecha de ultima actualizacion del producto", example = "2020-12-25T23:08:29.735Z", accessMode = AccessMode.READ_ONLY)
+	@ApiModelProperty(value = "Fecha de ultima actualizacion del producto", example = "2020-12-25T23:08:29.735Z", accessMode = AccessMode.READ_ONLY)
 	private Date lastUpdate;
 
 }

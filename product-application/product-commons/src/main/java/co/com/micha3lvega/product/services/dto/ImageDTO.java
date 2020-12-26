@@ -39,10 +39,10 @@ public class ImageDTO implements Serializable {
 	@ApiModelProperty(required = true, value = "Content Type de la imagen", example = "PNG,JPG")
 	private String contentType;
 
-	@ApiModelProperty(position = 9, value = "Fecha de creacion de la imagen", example = "2020-12-25T23:08:29.735Z", accessMode = AccessMode.READ_ONLY)
+	@ApiModelProperty(value = "Fecha de creacion de la imagen", example = "2020-12-25T23:08:29.735Z", accessMode = AccessMode.READ_ONLY)
 	private Date createDate;
 
-	@ApiModelProperty(position = 10, value = "Fecha de ultima actualizacion de la imagen", example = "2020-12-25T23:08:29.735Z", accessMode = AccessMode.READ_ONLY)
+	@ApiModelProperty(value = "Fecha de ultima actualizacion de la imagen", example = "2020-12-25T23:08:29.735Z", accessMode = AccessMode.READ_ONLY)
 	private Date lastUpdate;
 
 }
