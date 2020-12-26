@@ -2,6 +2,7 @@ package co.com.micha3lvega.product.services.dto;
 
 import java.io.InputStream;
 import java.io.Serializable;
+import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -25,17 +26,23 @@ public class ImageDTO implements Serializable {
 
 	@ApiModelProperty(required = true, value = "ID de la imagen", example = "5fe56033ebee2c5f3247c47e", accessMode = AccessMode.READ_ONLY)
 	private String id;
-	
+
 	@ApiModelProperty(value = "Tamaño de la imagen", example = "1246841", accessMode = AccessMode.READ_ONLY)
 	private Long size;
-	
+
 	@ApiModelProperty(required = true, value = "Nombre de la imagen", example = "Producto de ejemplo")
 	private String name;
-	
+
 	@ApiModelProperty(required = true, value = "Data base64 de la imagen", example = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABVYAAAM.....")
 	private InputStream data;
-	
+
 	@ApiModelProperty(required = true, value = "Content Type de la imagen", example = "PNG,JPG")
 	private String contentType;
+
+	@ApiModelProperty(position = 9, value = "Fecha de creacion de la imagen", example = "2020-12-25T23:08:29.735Z", accessMode = AccessMode.READ_ONLY)
+	private Date createDate;
+
+	@ApiModelProperty(position = 10, value = "Fecha de ultima actualizacion de la imagen", example = "2020-12-25T23:08:29.735Z", accessMode = AccessMode.READ_ONLY)
+	private Date lastUpdate;
 
 }
