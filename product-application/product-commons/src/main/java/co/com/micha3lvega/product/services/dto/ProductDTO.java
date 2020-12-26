@@ -32,17 +32,18 @@ public class ProductDTO implements Serializable {
 
 	private static final long serialVersionUID = -6438813507103704927L;
 
-	@ApiModelProperty(position = 1, required = true, value = "ID de la producto", example = "5fe56033ebee2c5f3247c47e", accessMode = AccessMode.READ_ONLY)
+	@ApiModelProperty(required = true, value = "ID de la producto", example = "5fe56033ebee2c5f3247c47e", accessMode = AccessMode.READ_ONLY)
 	private String id;
 
-	@ApiModelProperty(position = 2, required = true, value = "SKU de la producto", example = "1", accessMode = AccessMode.READ_ONLY)
+	@ApiModelProperty(required = true, value = "SKU de la producto", example = "1", accessMode = AccessMode.READ_ONLY)
 	private Long sku;
 
 	@NotNull(message = "El nombre es obligatorio")
 	@Size(min = 2, message = "El nombre del producto es muy corto")
-	@ApiModelProperty(position = 3, required = true, value = "Nombre del producto", example = "Producto de ejemplo")
+	@ApiModelProperty(required = true, value = "Nombre del producto", example = "Producto de ejemplo")
 	private String name;
 
+	@ApiModelProperty(required = true, value = "Imagen del producto", hidden = true)
 	private ImageDTO image;
 
 	@Size(min = 2, message = "La descripcion del producto es muy corto")
@@ -50,25 +51,25 @@ public class ProductDTO implements Serializable {
 	private String description;
 
 	@Size(min = 2, message = "El estado del producto es muy corto")
-	@ApiModelProperty(position = 4, value = "Estado del producto", example = "ACTIVE,INACTIVE")
+	@ApiModelProperty(value = "Estado del producto", example = "ACTIVE,INACTIVE")
 	private StateDTO state;
 
 	@Digits(integer = 3, fraction = 2)
 	@DecimalMin(value = "0.0", inclusive = false)
-	@ApiModelProperty(position = 5, value = "Precio del producto", example = "1")
+	@ApiModelProperty(value = "Precio del producto", example = "1")
 	private BigDecimal price;
 
 	@Digits(integer = 3, fraction = 2)
 	@DecimalMin(value = "0.0", inclusive = false)
-	@ApiModelProperty(position = 6, value = "Descuento del producto", example = "1")
+	@ApiModelProperty(value = "Descuento del producto", example = "1")
 	private BigDecimal discount;
 
 	@Min(value = 0, message = "El stock debe ser minimo de 0")
-	@ApiModelProperty(position = 7, value = "Stock del producto", example = "1")
+	@ApiModelProperty(value = "Stock del producto", example = "1")
 	private Long stock;
 
 	@Min(value = 0, message = "El stock minimo debe de ser 0")
-	@ApiModelProperty(position = 8, value = "Stock minimo del producto", example = "1")
+	@ApiModelProperty(value = "Stock minimo del producto", example = "1")
 	private Long minStock;
 
 	@Valid
