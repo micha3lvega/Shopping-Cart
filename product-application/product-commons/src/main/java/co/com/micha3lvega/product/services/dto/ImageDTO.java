@@ -2,7 +2,6 @@ package co.com.micha3lvega.product.services.dto;
 
 import java.io.InputStream;
 import java.io.Serializable;
-import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
