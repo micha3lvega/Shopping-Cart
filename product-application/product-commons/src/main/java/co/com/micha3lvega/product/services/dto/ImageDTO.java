@@ -1,6 +1,5 @@
 package co.com.micha3lvega.product.services.dto;
 
-import java.io.InputStream;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -12,6 +11,8 @@ import io.swagger.annotations.ApiModelProperty.AccessMode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import org.bson.types.Binary;
 
 @Data
 @NoArgsConstructor
@@ -33,7 +34,7 @@ public class ImageDTO implements Serializable {
 	private String name;
 
 	@ApiModelProperty(required = true, value = "Data base64 de la imagen", example = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABVYAAAM.....")
-	private InputStream data;
+	private Binary data;
 
 	@ApiModelProperty(required = true, value = "Content Type de la imagen", example = "PNG,JPG")
 	private String contentType;

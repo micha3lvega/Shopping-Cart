@@ -1,12 +1,8 @@
 package co.com.micha3lvega.product.services.model;
 
-import java.io.InputStream;
 import java.io.Serializable;
-import java.util.Date;
+import org.bson.types.Binary;
 
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -28,15 +24,12 @@ public class Image implements Serializable {
 
 	private static final long serialVersionUID = -8009473838700474340L;
 
-	@Id
-	private String id;
-
 	private Long size;
 
 	@Indexed(direction = IndexDirection.ASCENDING)
 	private String name;
 
-	private InputStream data;
+	private Binary data;
 
 	private String contentType;
 
