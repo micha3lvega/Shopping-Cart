@@ -32,10 +32,10 @@ public class ProductDTO implements Serializable {
 
 	private static final long serialVersionUID = -6438813507103704927L;
 
-	@ApiModelProperty(required = true, value = "ID de la producto", example = "5fe56033ebee2c5f3247c47e", accessMode = AccessMode.READ_ONLY)
+	@ApiModelProperty(required = true, value = "ID del producto", example = "5fe56033ebee2c5f3247c47e", accessMode = AccessMode.READ_ONLY)
 	private String id;
 
-	@ApiModelProperty(required = true, value = "SKU de la producto", example = "1", accessMode = AccessMode.READ_ONLY)
+	@ApiModelProperty(required = true, value = "SKU del producto", example = "1", accessMode = AccessMode.READ_ONLY)
 	private Long sku;
 
 	@NotNull(message = "El nombre es obligatorio")
