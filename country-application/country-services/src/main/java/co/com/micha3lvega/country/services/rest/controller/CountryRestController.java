@@ -28,7 +28,7 @@ public class CountryRestController {
 	private ICountryServices services;
 
 	@GetMapping
-	@ApiOperation(produces = "application/json", notes = "Obtiene todos los paises que hay en el sistema", value = "Obtener todas las marcas")
+	@ApiOperation(produces = "application/json", notes = "Obtiene todos los paises que hay en el sistema", value = "Obtener todos los paises")
 	public List<CountryDTO> findAll() {
 		return services.findAll();
 	}
