@@ -1,4 +1,4 @@
-package co.com.micha3lvega.country.services;
+package co.com.micha3lvega.country.services.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
