@@ -5,12 +5,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,10 +31,11 @@ public class CountryDTO implements Serializable {
 
 	private static final long serialVersionUID = -7641671328105268425L;
 
-	@JsonProperty("id")
+	@ApiModelProperty(required = true, value = "ID del pais", example = "5fe56033ebee2c5f3247c47e", hidden = true)
 	private String id;
 
-	@JsonProperty("name")
+	@NotNull
+	@ApiModelProperty(required = true, value = "Nombre del pais", example = "Colombia")
 	private String name;
 
 	@JsonProperty("topLevelDomain")
