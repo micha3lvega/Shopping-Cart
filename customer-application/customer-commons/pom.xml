@@ -47,6 +47,11 @@
 			<artifactId>user-commons</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>co.com.micha3lvega</groupId>
+			<artifactId>country-commons</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
 
 	</dependencies>
 </project>
