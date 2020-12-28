@@ -41,5 +41,12 @@
 			<version>1.6.2</version>
 		</dependency>
 
+		<!-- Local dependecies -->
+		<dependency>
+			<groupId>co.com.micha3lvega</groupId>
+			<artifactId>user-commons</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+
 	</dependencies>
 </project>
