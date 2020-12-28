@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import co.com.micha3lvega.country.commons.dto.CountryDTO;
 import co.com.micha3lvega.country.services.services.ICountryServices;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/api/v1/country")
@@ -27,27 +28,32 @@ public class CountryRestController {
 	private ICountryServices services;
 
 	@GetMapping
+	@ApiOperation(produces = "application/json", notes = "Obtiene todos los paises que hay en el sistema", value = "Obtener todas las marcas")
 	public List<CountryDTO> findAll() {
 		return services.findAll();
 	}
 
 	@GetMapping("/{id}")
+	@ApiOperation(produces = "application/json", notes = "El ID del pais es obligatorio", value = "Obtener un pais por su ID")
 	public CountryDTO findById(@PathVariable("id") String id) {
 		return services.findById(id);
 	}
 
 	@PostMapping
+	@ApiOperation(value = "Crea un pais", produces = "application/json")
 	public CountryDTO create(@Valid @RequestBody CountryDTO country) {
 		return services.create(country);
 	}
-	
+
 	@PutMapping
+	@ApiOperation(value = "Actualiza un pais", produces = "application/json")
 	public CountryDTO update(@Valid @RequestBody CountryDTO country) {
 		return services.update(country);
 	}
 
 	@PatchMapping
-	public List<CountryDTO> saveAll(@Valid @RequestBody List<CountryDTO> countries){
+	@ApiOperation(value = "Crea varios paises", produces = "application/json")
+	public List<CountryDTO> saveAll(@Valid @RequestBody List<CountryDTO> countries) {
 		return services.saveAll(countries);
 	}
 }
