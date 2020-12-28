@@ -1,0 +1,13 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>co.com.micha3lvega</groupId>
+  <artifactId>country-application</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>country-application</name>
+  <description>Aplicacion para el manejo de los paises</description>
+  <modules>
+  	<module>country-commons</module>
+  	<module>country-services</module>
+  </modules>
+</project>
