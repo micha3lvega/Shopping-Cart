@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -29,6 +30,7 @@ public class Country implements Serializable {
 
 	private static final long serialVersionUID = -2617238303335601963L;
 
+	@Id
 	private String id;
 
 	private String name;
