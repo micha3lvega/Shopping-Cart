@@ -7,7 +7,6 @@ import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import io.swagger.annotations.ApiModel;
@@ -25,16 +24,12 @@ public class RegionalBloc implements Serializable {
 
 	private static final long serialVersionUID = 4893742165681278217L;
 
-	@JsonProperty("acronym")
 	private String acronym;
 
-	@JsonProperty("name")
 	private String name;
 
-	@JsonProperty("otherAcronyms")
 	private List<Object> otherAcronyms = null;
 
-	@JsonProperty("otherNames")
 	private List<Object> otherNames = null;
 
 	@JsonIgnore
