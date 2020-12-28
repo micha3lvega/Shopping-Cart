@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/api/v1/country")
-@Api(tags = "Marcas", description = "Operaciones para la administracion de los paises")
+@Api(tags = "Paises", description = "Operaciones para la administracion de los paises")
 public class CountryRestController {
 
 	@Autowired
