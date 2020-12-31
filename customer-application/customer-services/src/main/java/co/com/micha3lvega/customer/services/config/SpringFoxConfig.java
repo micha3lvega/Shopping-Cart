@@ -25,7 +25,7 @@ public class SpringFoxConfig {
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfo("API rest servicios de productos", "Api para el manejo de los servicios de clientes.",
+		return new ApiInfo("API rest servicios de clientes", "Api para el manejo de los servicios de clientes.",
 				"API TOS", "Terms of service", new Contact("Michael Vega", "www.example.com", "micha3lvega@gmail."),
 				"License of API", "API license URL", Collections.emptyList());
 	}
