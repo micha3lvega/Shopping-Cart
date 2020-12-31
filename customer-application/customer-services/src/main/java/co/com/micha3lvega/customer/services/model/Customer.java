@@ -11,7 +11,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import co.com.micha3lvega.customer.commons.dto.AddressDTO;
 import co.com.micha3lvega.product.commons.dto.UserDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,7 +31,7 @@ public class Customer implements Serializable {
 
 	private UserDTO user;
 
-	private AddressDTO address;
+	private Address address;
 
 	@CreatedDate
 	private Date createDate;
