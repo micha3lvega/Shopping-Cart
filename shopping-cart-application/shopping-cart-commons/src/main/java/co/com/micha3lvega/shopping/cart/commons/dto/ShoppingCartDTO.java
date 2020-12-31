@@ -29,6 +29,7 @@ public class ShoppingCartDTO implements Serializable {
 
 	private static final long serialVersionUID = -25787460908161985L;
 
+	@NotNull(message = "El ID es obligatorio")
 	@ApiModelProperty(required = true, value = "ID del carrito de compras", example = "5fe56033ebee2c5f3247c47e", hidden = true)
 	private String id;
 
@@ -40,7 +41,7 @@ public class ShoppingCartDTO implements Serializable {
 	@NotNull(message = "El carrito de compras debe tener al menos un producto")
 	private List<ProductDTO> products;
 
-	@ApiModelProperty(value = "Fecha de creacion del carrito de compras", example = "2020-12-25T23:08:29.735Z", accessMode = AccessMode.READ_ONLY)
+	@ApiModelProperty(value = "Fecha de creacion del carrito de compras", example = "2020-12-25T23:08:29.735Z", hidden = true, accessMode = AccessMode.READ_ONLY)
 	private Date createDate;
 
 	@ApiModelProperty(value = "Fecha de ultima actualizacion del carrito de compras", example = "2020-12-25T23:08:29.735Z", hidden = true)
