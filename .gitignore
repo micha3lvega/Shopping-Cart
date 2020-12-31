@@ -42,3 +42,6 @@ atlassian-ide-plugin.xml
 .gradletasknamecache
 /product-application/product-commons/.factorypath
 /product-application/product-services/.factorypath
+
+*.factorypath
+*/factorypath*
