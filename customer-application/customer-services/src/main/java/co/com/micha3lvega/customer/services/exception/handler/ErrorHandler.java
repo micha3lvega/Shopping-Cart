@@ -27,7 +27,13 @@ public class ErrorHandler {
 
 		// convert errors to standard string
 		StringBuilder errorMessage = new StringBuilder();
-		fieldErrors.forEach(f -> errorMessage.append(f.getDefaultMessage()));
+
+		for (int i = 0; i < fieldErrors.size(); i++) {
+			errorMessage.append(fieldErrors.get(i).getDefaultMessage());
+			if (fieldErrors.size() > 1 && i < fieldErrors.size() - 1) {
+				errorMessage.append(",");
+			}
+		}
 
 		// return error info object with standard json
 		ErrorInfo errorInfo = new ErrorInfo(HttpStatus.BAD_REQUEST.value(), errorMessage.toString(),
