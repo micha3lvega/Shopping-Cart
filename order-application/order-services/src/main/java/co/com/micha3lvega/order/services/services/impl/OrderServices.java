@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import co.com.micha3lvega.order.commons.dto.OrderDTO;
+import co.com.micha3lvega.order.commons.dto.OrderStatusDTO;
 import co.com.micha3lvega.order.services.exception.OrderNotExitsException;
 import co.com.micha3lvega.order.services.model.Order;
 import co.com.micha3lvega.order.services.repository.OrderRepository;
@@ -46,6 +47,9 @@ public class OrderServices implements IOrderServices {
 	@Transactional
 	public OrderDTO create(OrderDTO dto) {
 
+		// Configurar el estado inicial de la orden
+		dto.setState(OrderStatusDTO.NOT_SEND);
+		
 		// Crear la orden
 		Order order = repository.insert(mapper.map(dto, Order.class));
 
