@@ -1,4 +1,4 @@
-package co.com.micha3lvega.order.services;
+package co.com.micha3lvega.order.services.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
