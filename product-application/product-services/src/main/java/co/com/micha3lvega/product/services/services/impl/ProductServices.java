@@ -28,9 +28,8 @@ public class ProductServices implements IProductServices {
 	@Override
 	@Transactional(readOnly = true)
 	public List<ProductDTO> findAll() {
-		return repository.findAll().stream().map(product -> {
-			return mapper.map(product, ProductDTO.class);
-		}).collect(Collectors.toList());
+		return repository.findAll().stream().map(product -> mapper.map(product, ProductDTO.class))
+				.collect(Collectors.toList());
 	}
 
 	@Override
@@ -86,10 +85,10 @@ public class ProductServices implements IProductServices {
 			throw new ProductExistException();
 		}
 
-		//Actualizar la entidad
+		// Actualizar la entidad
 		Product updateProduct = repository.save(mapper.map(dto, Product.class));
-		
-		return mapper.map(updateProduct,ProductDTO.class);
+
+		return mapper.map(updateProduct, ProductDTO.class);
 	}
 
 }
