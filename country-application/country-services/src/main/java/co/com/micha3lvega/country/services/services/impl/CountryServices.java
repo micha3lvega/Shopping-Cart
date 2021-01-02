@@ -29,9 +29,8 @@ public class CountryServices implements ICountryServices {
 	@Override
 	@Transactional(readOnly = true)
 	public List<CountryDTO> findAll() {
-		return repository.findAll().stream().map(country -> {
-			return mapper.map(country, CountryDTO.class);
-		}).collect(Collectors.toList());
+		return repository.findAll().stream().map(country -> mapper.map(country, CountryDTO.class))
+				.collect(Collectors.toList());
 	}
 
 	@Override
@@ -67,20 +66,19 @@ public class CountryServices implements ICountryServices {
 	@Override
 	@Transactional
 	public List<CountryDTO> saveAll(List<CountryDTO> countries) {
-		
+
 		// Convertir a un arreglo de entidades
-		List<Country> newCountries = countries.stream().map(country -> {
-			return mapper.map(country, Country.class);
-		}).collect(Collectors.toList());
-		
+		List<Country> newCountries = countries.stream().map(country -> mapper.map(country, Country.class))
+				.collect(Collectors.toList());
+
 		// Guardar los paises
 		newCountries = repository.saveAll(newCountries);
-		
+
 		// Convertir a un arreglo de DTO's y retornarlos
 		return newCountries.stream().map(country -> {
 			return mapper.map(country, CountryDTO.class);
 		}).collect(Collectors.toList());
-		
+
 	}
 
 }
