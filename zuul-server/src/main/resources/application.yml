@@ -1,0 +1,13 @@
+#Component Info
+info:
+ component: zuul-server
+ 
+#Spring Application Name 
+spring:
+ application:
+  name: zuul-server
+ 
+#Server Port
+server:
+ port: 8080
+ 
