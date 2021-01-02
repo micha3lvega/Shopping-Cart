@@ -27,9 +27,8 @@ public class OrderServices implements IOrderServices {
 	@Override
 	@Transactional(readOnly = true)
 	public List<OrderDTO> findAll() {
-		return repository.findAll().stream().map(order -> {
-			return mapper.map(order, OrderDTO.class);
-		}).collect(Collectors.toList());
+		return repository.findAll().stream().map(order -> mapper.map(order, OrderDTO.class))
+				.collect(Collectors.toList());
 	}
 
 	@Override
@@ -49,7 +48,7 @@ public class OrderServices implements IOrderServices {
 
 		// Configurar el estado inicial de la orden
 		dto.setState(OrderStatusDTO.NOT_SEND);
-		
+
 		// Crear la orden
 		Order order = repository.insert(mapper.map(dto, Order.class));
 
