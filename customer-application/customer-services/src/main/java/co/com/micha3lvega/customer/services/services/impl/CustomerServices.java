@@ -32,9 +32,8 @@ public class CustomerServices implements ICustomerServices {
 	@Override
 	@Transactional(readOnly = true)
 	public List<CustomerDTO> findAll() {
-		return repository.findAll().stream().map(customer -> {
-			return mapper.map(customer, CustomerDTO.class);
-		}).collect(Collectors.toList());
+		return repository.findAll().stream().map(customer -> mapper.map(customer, CustomerDTO.class))
+				.collect(Collectors.toList());
 	}
 
 	@Override
