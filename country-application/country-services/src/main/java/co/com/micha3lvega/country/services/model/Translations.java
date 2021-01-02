@@ -1,8 +1,6 @@
 package co.com.micha3lvega.country.services.model;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -41,7 +39,4 @@ public class Translations implements Serializable {
 	private String hr;
 
 	private String fa;
-
-	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
 }

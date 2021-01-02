@@ -1,11 +1,7 @@
 package co.com.micha3lvega.country.services.model;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -27,12 +23,5 @@ public class RegionalBloc implements Serializable {
 	private String acronym;
 
 	private String name;
-
-	private List<Object> otherAcronyms = null;
-
-	private List<Object> otherNames = null;
-
-	@JsonIgnore
-	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
 }

@@ -1,9 +1,7 @@
 package co.com.micha3lvega.country.services.model;
 
 import java.io.Serializable;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -80,7 +78,5 @@ public class Country implements Serializable {
 	private List<RegionalBloc> regionalBlocs = null;
 
 	private String cioc;
-
-	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
 }

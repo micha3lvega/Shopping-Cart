@@ -1,8 +1,6 @@
 package co.com.micha3lvega.country.services.model;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -31,7 +29,5 @@ public class Currency implements Serializable {
 	private String name;
 
 	private String symbol;
-
-	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
 }
