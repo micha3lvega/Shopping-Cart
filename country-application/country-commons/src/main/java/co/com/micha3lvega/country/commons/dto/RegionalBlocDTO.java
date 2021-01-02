@@ -1,11 +1,7 @@
 package co.com.micha3lvega.country.commons.dto;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -31,13 +27,5 @@ public class RegionalBlocDTO implements Serializable {
 	@JsonProperty("name")
 	private String name;
 
-	@JsonProperty("otherAcronyms")
-	private List<Object> otherAcronyms = null;
-
-	@JsonProperty("otherNames")
-	private List<Object> otherNames = null;
-
-	@JsonIgnore
-	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
 }
