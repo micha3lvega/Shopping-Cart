@@ -75,9 +75,7 @@ public class CountryServices implements ICountryServices {
 		newCountries = repository.saveAll(newCountries);
 
 		// Convertir a un arreglo de DTO's y retornarlos
-		return newCountries.stream().map(country -> {
-			return mapper.map(country, CountryDTO.class);
-		}).collect(Collectors.toList());
+		return newCountries.stream().map(country -> mapper.map(country, CountryDTO.class)).collect(Collectors.toList());
 
 	}
 
