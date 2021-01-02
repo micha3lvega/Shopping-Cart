@@ -10,4 +10,8 @@ spring:
 #Server Port
 server:
  port: 8080
- 
+
+#Eureka Instance ID
+eureka:
+ instance:
+  instanceId: ${spring.application.name}:${server.port}-${spring.application.instance_id:${random.value}}
