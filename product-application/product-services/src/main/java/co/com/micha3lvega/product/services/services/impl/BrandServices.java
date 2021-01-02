@@ -28,9 +28,8 @@ public class BrandServices implements IBrandServices {
 	@Override
 	@Transactional(readOnly = true)
 	public List<BrandDTO> findAll() {
-		return repository.findAll().stream().map(brand -> {
-			return mapper.map(brand, BrandDTO.class);
-		}).collect(Collectors.toList());
+		return repository.findAll().stream().map(brand -> mapper.map(brand, BrandDTO.class))
+				.collect(Collectors.toList());
 	}
 
 	@Override
