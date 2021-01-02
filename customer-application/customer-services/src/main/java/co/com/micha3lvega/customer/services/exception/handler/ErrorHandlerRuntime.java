@@ -12,7 +12,7 @@ import co.com.micha3lvega.customer.services.exception.ErrorInfo;
 
 
 @ControllerAdvice
-public class ErrorHandlerRuntimeException {
+public class ErrorHandlerRuntime {
 
 	@ExceptionHandler(RuntimeException.class)
 	public ResponseEntity<ErrorInfo> methodArgumentNotValidException(HttpServletRequest request, RuntimeException e) {

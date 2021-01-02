@@ -9,7 +9,7 @@ import feign.FeignException;
 
 
 @ControllerAdvice
-public class ErrorHandlerCustomException {
+public class ErrorHandlerCustom {
 
 	@ExceptionHandler(FeignException.class)
 	public String methodArgumentNotValidException(FeignException e,  HttpServletResponse response) {
