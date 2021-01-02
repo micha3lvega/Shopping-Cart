@@ -19,8 +19,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
+@Api(tags = "Clientes")
 @RequestMapping("/api/v1/customer")
-@Api(tags = "Clientes", description = "Operaciones para la administracion de los clientes")
 public class CustomerRestController {
 
 	@Autowired
