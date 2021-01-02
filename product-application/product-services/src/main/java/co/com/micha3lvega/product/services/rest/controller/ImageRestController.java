@@ -15,7 +15,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@Api(tags = "Imagenes", description = "Operaciones para la administracion de las imagenes del producto")
+@Api(tags = "Imagenes")
 @RequestMapping("/api/v1/image")
 public class ImageRestController {
 

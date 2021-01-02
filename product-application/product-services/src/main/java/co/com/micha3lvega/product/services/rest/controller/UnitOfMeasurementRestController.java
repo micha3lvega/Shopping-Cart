@@ -20,8 +20,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
+@Api(tags = "Unidad de medida")
 @RequestMapping("/api/v1/unit")
-@Api(tags = "Unidad de medida", description = "Operaciones para la administracion de las unidades de medida")
 public class UnitOfMeasurementRestController {
 
 	@Autowired

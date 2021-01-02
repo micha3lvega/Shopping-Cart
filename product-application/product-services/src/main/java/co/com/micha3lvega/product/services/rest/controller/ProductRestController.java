@@ -19,8 +19,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
+@Api(tags = "Productos")
 @RequestMapping("/api/v1/product")
-@Api(tags = "Productos", description = "Operaciones para la administracion de los productos")
 public class ProductRestController {
 
 	@Autowired

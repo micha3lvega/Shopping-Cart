@@ -20,7 +20,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@Api(tags = "Categorias", description = "Operaciones para la administracion de las categorias")
+@Api(tags = "Categorias")
 @RequestMapping("/api/v1/category")
 public class CategoryRestController {
 
