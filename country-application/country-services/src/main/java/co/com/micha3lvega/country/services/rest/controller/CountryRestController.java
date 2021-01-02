@@ -20,8 +20,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
+@Api(tags = "Paises")
 @RequestMapping("/api/v1/country")
-@Api(tags = "Paises", description = "Operaciones para la administracion de los paises")
 public class CountryRestController {
 
 	@Autowired
