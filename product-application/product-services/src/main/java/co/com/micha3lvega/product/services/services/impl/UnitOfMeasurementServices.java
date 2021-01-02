@@ -26,9 +26,9 @@ public class UnitOfMeasurementServices implements IUnitOfMeasurementServices {
 
 	@Override
 	public List<UnitOfMeasurementDTO> findAll() {
-		return repository.findAll().stream().map(unitOfMeasurement -> {
-			return mapper.map(unitOfMeasurement, UnitOfMeasurementDTO.class);
-		}).collect(Collectors.toList());
+		return repository.findAll().stream()
+				.map(unitOfMeasurement -> mapper.map(unitOfMeasurement, UnitOfMeasurementDTO.class))
+				.collect(Collectors.toList());
 	}
 
 	@Override

@@ -28,9 +28,8 @@ public class CategoryServices implements ICategoryServices {
 	@Override
 	@Transactional(readOnly = true)
 	public List<CategoryDTO> findAll() {
-		return repository.findAll().stream().map(category -> {
-			return mapper.map(category, CategoryDTO.class);
-		}).collect(Collectors.toList());
+		return repository.findAll().stream().map(category -> mapper.map(category, CategoryDTO.class))
+				.collect(Collectors.toList());
 	}
 
 	@Override
