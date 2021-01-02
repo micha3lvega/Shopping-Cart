@@ -20,7 +20,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@Api(tags = "Marcas", description = "Operaciones para la administracion de las marcas")
+@Api(tags = "Marcas")
 @RequestMapping("/api/v1/brand")
 public class BrandRestController {
 
