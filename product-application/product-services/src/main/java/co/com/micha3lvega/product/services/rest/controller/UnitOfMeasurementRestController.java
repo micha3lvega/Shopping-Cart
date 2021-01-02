@@ -53,7 +53,7 @@ public class UnitOfMeasurementRestController {
 
 	@PutMapping
 	@ApiOperation(value = "Actualiza una unidad de medida", produces = "application/json", notes = "El id de la unidad de medida es obligatorio")
-	UnitOfMeasurementDTO update(@Valid @RequestBody UnitOfMeasurementDTO unitOfMeasurementDTO) {
+	public UnitOfMeasurementDTO update(@Valid @RequestBody UnitOfMeasurementDTO unitOfMeasurementDTO) {
 		return services.update(unitOfMeasurementDTO);
 	}
 
