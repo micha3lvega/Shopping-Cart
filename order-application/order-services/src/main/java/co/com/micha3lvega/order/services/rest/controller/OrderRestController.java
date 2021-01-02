@@ -19,8 +19,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
+@Api(tags = "Orden")
 @RequestMapping("/api/v1/order")
-@Api(tags = "Orden", description = "Operaciones para la administracion de las ordenes")
 public class OrderRestController {
 
 	@Autowired
