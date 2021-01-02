@@ -15,3 +15,8 @@ server:
 eureka:
  instance:
   instanceId: ${spring.application.name}:${server.port}-${spring.application.instance_id:${random.value}}
+
+#Ribbon Activation
+ribbon:
+ eureka:
+  enabled: true
