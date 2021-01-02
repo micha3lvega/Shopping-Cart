@@ -1,4 +1,4 @@
-package co.com.micha3lvega.country.services.exception.handler;
+package co.com.micha3lvega.product.services.exception.handler;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import co.com.micha3lvega.country.services.exception.ErrorInfo;
+import co.com.micha3lvega.product.services.exception.ErrorInfo;
 
 @ControllerAdvice
 public class ErrorHandlerCustom {
