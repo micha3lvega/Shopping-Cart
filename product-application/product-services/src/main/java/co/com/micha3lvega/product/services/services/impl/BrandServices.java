@@ -36,7 +36,7 @@ public class BrandServices implements IBrandServices {
 	@Transactional(readOnly = true)
 	public BrandDTO findById(String id) {
 
-		Brand brand = repository.findById(id).orElseThrow(() -> new BrandNoExistException());
+		Brand brand = repository.findById(id).orElseThrow(BrandNoExistException::new);
 		return mapper.map(brand, BrandDTO.class);
 	}
 
@@ -95,7 +95,7 @@ public class BrandServices implements IBrandServices {
 	public void delete(String id) {
 
 		// Buscar que exista la entidad
-		Brand brand = repository.findById(id).orElseThrow(() -> new BrandNoExistException());
+		Brand brand = repository.findById(id).orElseThrow(BrandNoExistException::new);
 		repository.delete(brand);
 
 	}

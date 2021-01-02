@@ -36,7 +36,7 @@ public class UnitOfMeasurementServices implements IUnitOfMeasurementServices {
 
 		// Buscar que la entidad exista
 		UnitOfMeasurement unitOfMeasurement = repository.findById(id)
-				.orElseThrow(() -> new UnitOfMeasurementNoExistException());
+				.orElseThrow(UnitOfMeasurementNoExistException::new);
 
 		// Eliminar la unidad de medida
 		repository.delete(unitOfMeasurement);
@@ -48,7 +48,7 @@ public class UnitOfMeasurementServices implements IUnitOfMeasurementServices {
 
 		// Buscar que la entidad exista
 		UnitOfMeasurement unitOfMeasurement = repository.findById(id)
-				.orElseThrow(() -> new UnitOfMeasurementNoExistException());
+				.orElseThrow(UnitOfMeasurementNoExistException::new);
 
 		return mapper.map(unitOfMeasurement, UnitOfMeasurementDTO.class);
 	}
@@ -86,7 +86,7 @@ public class UnitOfMeasurementServices implements IUnitOfMeasurementServices {
 
 		// Buscar que el id si exista
 		UnitOfMeasurement currentUnitOfMeasurement = repository.findById(unitOfMeasurementDTO.getId())
-				.orElseThrow(() -> new UnitOfMeasurementNoExistException());
+				.orElseThrow(UnitOfMeasurementNoExistException::new);
 
 		// Normalizar el nombre
 		if (unitOfMeasurementDTO.getName() != null) {

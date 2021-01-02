@@ -38,7 +38,7 @@ public class CategoryServices implements ICategoryServices {
 	public void delete(String id) {
 
 		// Buscar que exista la entidad
-		Category category = repository.findById(id).orElseThrow(() -> new CategoryNoExistException());
+		Category category = repository.findById(id).orElseThrow(CategoryNoExistException::new);
 		repository.delete(category);
 
 	}
@@ -48,7 +48,7 @@ public class CategoryServices implements ICategoryServices {
 	public CategoryDTO findById(String id) {
 
 		// Buscar que exista la entidad
-		Category category = repository.findById(id).orElseThrow(() -> new CategoryNoExistException());
+		Category category = repository.findById(id).orElseThrow(CategoryNoExistException::new);
 		return mapper.map(category, CategoryDTO.class);
 
 	}
@@ -83,8 +83,7 @@ public class CategoryServices implements ICategoryServices {
 		}
 
 		// Buscar que el id exista
-		Category currentCategory = repository.findById(category.getId())
-				.orElseThrow(() -> new CategoryNoExistException());
+		Category currentCategory = repository.findById(category.getId()).orElseThrow(CategoryNoExistException::new);
 
 		// Normalizar nombre
 		if (category.getName() != null) {
