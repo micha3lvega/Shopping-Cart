@@ -35,9 +35,7 @@ public class UserServices implements IUserServices {
 	@Override
 	@Transactional(readOnly = true)
 	public List<UserDTO> findAll() {
-		return repository.findAll().stream().map(user -> {
-			return mapper.map(user, UserDTO.class);
-		}).collect(Collectors.toList());
+		return repository.findAll().stream().map(user -> mapper.map(user, UserDTO.class)).collect(Collectors.toList());
 	}
 
 	@Override
@@ -96,7 +94,7 @@ public class UserServices implements IUserServices {
 		if (userEmail != null) {
 			throw new UserEmailExistException();
 		}
-		
+
 		// Validar que el estado no sea nulo
 		if (dto.getState() == null) {
 			dto.setState(StateDTO.ACTIVE);
