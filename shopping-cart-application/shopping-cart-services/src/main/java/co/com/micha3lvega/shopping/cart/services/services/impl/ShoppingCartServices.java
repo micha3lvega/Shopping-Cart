@@ -39,9 +39,8 @@ public class ShoppingCartServices implements IShoppingCartServices {
 	@Override
 	@Transactional(readOnly = true)
 	public List<ShoppingCartDTO> findAll() {
-		return repository.findAll().stream().map(cart -> {
-			return mapper.map(cart, ShoppingCartDTO.class);
-		}).collect(Collectors.toList());
+		return repository.findAll().stream().map(cart -> mapper.map(cart, ShoppingCartDTO.class))
+				.collect(Collectors.toList());
 	}
 
 	@Override
