@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import co.com.micha3lvega.user.services.exception.ErrorInfo;
 
 @ControllerAdvice
-public class ErrorHandlerCustomException {
+public class ErrorHandlerCustom {
 
 	@ExceptionHandler(RuntimeException.class)
 	public ResponseEntity<ErrorInfo> methodArgumentNotValidException(HttpServletRequest request, RuntimeException e) {
