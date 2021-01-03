@@ -15,8 +15,6 @@ public class UserServicesConfig {
 
 	@Bean
 	public Pbkdf2PasswordEncoder encoder() {
-		Pbkdf2PasswordEncoder encoder = new Pbkdf2PasswordEncoder("co.com.micha3lvega.user.services.config.secret",
-				10000, 128);
-		return encoder;
+		return new Pbkdf2PasswordEncoder("co.com.micha3lvega.user.services.config.secret", 10000, 128);
 	}
 }
