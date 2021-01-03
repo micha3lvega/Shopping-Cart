@@ -20,8 +20,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
+@Api(tags = "Carrito de compras")
 @RequestMapping("/api/v1/shopping/cart")
-@Api(tags = "Carrito de compras", description = "Operaciones para la administracion de los carritos de compras")
 public class ShoppingCartRestController {
 
 	@Autowired
