@@ -188,4 +188,17 @@ public class UserServices implements IUserServices {
 
 	}
 
+	@Override
+	@Transactional(readOnly = true)
+	public UserDTO findByEmail(String email) {
+
+		// Buscar que el usuario exista si no existe retornar una excepcion
+		User user = repository.findByEmail(email);
+		if (user == null) {
+			throw new UserNoExistException();
+		}
+		
+		return mapper.map(user, UserDTO.class);
+	}
+
 }

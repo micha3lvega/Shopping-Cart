@@ -17,6 +17,8 @@ public interface IUserServices {
 	UserDTO update(UserDTO dto);
 
 	UserDTO findById(String id);
+	
+	UserDTO findByEmail(String email);
 
 	UserDTO login(String email, String password);
 
