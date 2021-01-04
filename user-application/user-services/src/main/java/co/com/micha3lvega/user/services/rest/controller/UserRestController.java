@@ -39,6 +39,12 @@ public class UserRestController {
 		return services.findById(id);
 	}
 
+	@GetMapping("/email/{email}")
+	@ApiOperation(produces = "application/json", value = "Obtener un usuario por su email")
+	public UserDTO findByEmail(@PathVariable("email") String email) {
+		return services.findByEmail(email);
+	}
+
 	@PutMapping("/enable/{id}")
 	@ApiOperation(produces = "application/json", notes = "El ID del usuario es obligatorio", value = "Activa un usuario por su ID")
 	public UserDTO enable(@PathVariable("id") String id) {
