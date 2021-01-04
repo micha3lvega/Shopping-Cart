@@ -20,3 +20,11 @@ eureka:
 ribbon:
  eureka:
   enabled: true
+  
+#Routers
+zuul:
+  routes:
+    users:
+      path: /user/**
+      serviceId: user-services      
+      
