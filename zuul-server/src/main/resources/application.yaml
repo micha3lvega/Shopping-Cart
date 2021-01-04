@@ -26,5 +26,8 @@ zuul:
   routes:
     users:
       path: /user/**
-      serviceId: user-services      
+      serviceId: user-services    
+    customer:
+      path: /customer/**
+      serviceId: customer-services      
       
