@@ -2,14 +2,22 @@ package co.com.micha3lvega.zuul.server.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
 
 @Configuration
 public class ZuulServerConfig {
 
 	@Bean
-	public Pbkdf2PasswordEncoder encoder() {
-		return new Pbkdf2PasswordEncoder("co.com.micha3lvega.user.services.config.secret", 10000, 128);
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+
+	@Bean
+	public TokenStore tokenStore() {
+		return new InMemoryTokenStore();
 	}
 
 }
