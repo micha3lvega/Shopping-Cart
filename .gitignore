@@ -108,3 +108,4 @@ tools/gulp-tasks/cldr/cldr-data/
 .husky/_
 *.factorypath
 */factorypath*
+shopping-cart/package-lock.json
