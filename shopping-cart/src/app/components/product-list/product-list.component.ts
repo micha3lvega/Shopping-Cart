@@ -15,10 +15,7 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    console.log("[ProductListComponent] (ngOnInit) working........");
     this.getAllProducts();
-
   }
 
   getAllProducts(): void {
@@ -27,12 +24,17 @@ export class ProductListComponent implements OnInit {
       .subscribe(
         data => {
           this.products = data;
-          console.log(data);
         },
         error => {
-          console.log(error);
+          var retry = confirm('Error al obtener los productos, Intentar de nuevo');
+          if (retry) {
+            window.location.reload();
+          } else {
+            setTimeout(() => {                           //<<<---using ()=> syntax
+              window.location.reload();
+            }, 60000);
+          }
         });
-
   }
 
 
