@@ -1,1 +1,30 @@
-<p>product-list works!</p>
+<div class="card-group">
+
+  <div class="title text-center col-12">
+    <h1 class="display-4">Productos</h1>
+  </div>
+
+  <div class="row">
+
+    <div class="col-4" *ngFor="let product of products">
+
+      <div class="card">
+
+        <img class="card-img-top" [src]="'data:'+ product.image.contentType  +';base64,'+ product.image.data.data"
+          alt="{{product.description}}">
+
+        <div class="card-body">
+
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <p class="card-text"><small class="text-muted">{{product.price | currency}}</small></p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
