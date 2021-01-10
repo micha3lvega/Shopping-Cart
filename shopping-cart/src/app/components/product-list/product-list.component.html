@@ -18,7 +18,8 @@
           <h5 class="card-title">{{product.name}}</h5>
           <p class="card-text">{{product.description}}</p>
           <p class="card-text"><small class="text-muted">{{product.price | currency}}</small></p>
-          <button type="button" class="btn btn-lg btn-block btn-info d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
+          <button type="button"
+            class="btn btn-lg btn-block btn-info d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
             <span class="btn-label">
               <i class="fas fa-shopping-cart"></i>
             </span>
@@ -35,6 +36,14 @@
 
     </div>
 
+
   </div>
 
+</div>
+
+<div *ngIf="error">
+  <h1>Error: </h1>
+  <div>
+    <h4>error: {{error | json }}</h4>
+  </div>
 </div>
