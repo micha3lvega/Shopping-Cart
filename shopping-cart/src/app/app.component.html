@@ -1,17 +1,25 @@
 <!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+  crossorigin="anonymous" />
 
 <div>
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">Micha3lVega</a>
-    <div class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link">Productos</a>
+  <nav class="navbar navbar-dark bg-primary fixed-top">
+
+    <a class="navbar-brand" href="#">E-Commerce</a>
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Productos<span class="sr-only">(current)</span></a>
       </li>
-    </div>
+    </ul>
+
+    <button class="btn btn-success" type="submit">Iniciar sesion</button>
+
   </nav>
 
   <div class="container">
     <router-outlet></router-outlet>
   </div>
+
 </div>
