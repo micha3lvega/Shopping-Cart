@@ -18,11 +18,16 @@
           <h5 class="card-title">{{product.name}}</h5>
           <p class="card-text">{{product.description}}</p>
           <p class="card-text"><small class="text-muted">{{product.price | currency}}</small></p>
-          <button type="button" class="btn btn-lg btn-block btn-info">
-            <span class="btn-label" >
+          <button type="button" class="btn btn-lg btn-block btn-info d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
+            <span class="btn-label">
               <i class="fas fa-shopping-cart"></i>
             </span>
             Agregar al carrito
+          </button>
+          <button type="button" class="btn btn-lg btn-block btn-info d-block d-sm-none d-none d-sm-block d-md-none">
+            <span class="btn-label">
+              <i class="fas fa-shopping-cart"></i>
+            </span>
           </button>
         </div>
 
