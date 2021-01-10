@@ -1,4 +1,12 @@
 .title {
   color: red;
-  margin-top: 5%;
+  margin-top: 7%;
+}
+
+.product {
+  padding: 10px;
+}
+
+.card-product {
+  padding: 10px;
 }

@@ -1,16 +1,17 @@
 <div class="card-group">
 
-  <div class="title text-center col-12">
-    <h1 class="display-4">Productos</h1>
+  <div class="title text-center col-12 ">
+    <h1 class="display-4 shadow-lg p-3 mb-5 bg-white rounded">Productos</h1>
   </div>
 
   <div class="row">
 
-    <div class="col-4" *ngFor="let product of products">
+    <div class="col-4 product" *ngFor="let product of products">
 
-      <div class="card">
+      <div class="card card-product shadow-lg p-3 mb-5 bg-white rounded">
 
-        <img class="card-img-top" [src]="'data:'+ product.image.contentType  +';base64,'+ product.image.data.data"
+        <img class="card-img-top shadow-lg p-3 mb-5 bg-white rounded"
+          [src]="'data:'+ product.image.contentType  +';base64,'+ product.image.data.data"
           alt="{{product.description}}">
 
         <div class="card-body">
