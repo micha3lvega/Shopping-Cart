@@ -26,7 +26,7 @@ export class ProductListComponent implements OnInit {
           this.products = data;
         },
         error => {
-          var retry = confirm('Error al obtener los productos, Intentar de nuevo');
+          var retry = confirm('Error al obtener los productos, ¿Intentar de nuevo?');
           if (retry) {
             window.location.reload();
           } else {
