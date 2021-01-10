@@ -30,7 +30,7 @@ export class ProductListComponent implements OnInit {
           if (retry) {
             window.location.reload();
           } else {
-            setTimeout(() => {                           //<<<---using ()=> syntax
+            setTimeout(() => {
               window.location.reload();
             }, 60000);
           }
