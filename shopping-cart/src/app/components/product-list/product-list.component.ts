@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
+import { Product } from 'src/app/model/product';
 
 // Example https://www.itsolutionstuff.com/post/angular-9-8-sweetalert2-sample-example-tutorialexample.html
 import Swal from 'sweetalert2/dist/sweetalert2.js';
@@ -12,7 +14,7 @@ import { ProductService } from './../../services/product.service'
 })
 export class ProductListComponent implements OnInit {
 
-  products: any;
+  products: Array<Product> = [];;
 
   constructor(private productService: ProductService) {
   }
