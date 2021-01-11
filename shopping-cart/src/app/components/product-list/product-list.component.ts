@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+// Example https://www.itsolutionstuff.com/post/angular-9-8-sweetalert2-sample-example-tutorialexample.html
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
 import { ProductService } from './../../services/product.service'
 
 @Component({
@@ -26,16 +29,29 @@ export class ProductListComponent implements OnInit {
           this.products = data;
         },
         error => {
-          var retry = confirm('Error al obtener los productos, ¿Intentar de nuevo?');
-          if (retry) {
-            window.location.reload();
-          } else {
-            setTimeout(() => {
-              window.location.reload();
-            }, 60000);
-          }
+          console.error('[ProductListComponent] (getAllProducts) error: ', error);
+          this.onErrorGetProducts();
         });
   }
 
+
+  onErrorGetProducts(): void {
+    Swal.fire({
+      title: 'Error al obtener los productos',
+      text: '¿Intentar de nuevo?',
+      icon: 'error',
+      showCancelButton: true,
+      confirmButtonText: 'Si',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.value) {
+        window.location.reload();
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        setTimeout(() => {
+          window.location.reload();
+        }, 60000);
+      }
+    })
+  }
 
 }
