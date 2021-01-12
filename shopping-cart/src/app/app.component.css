@@ -1,0 +1,15 @@
+.button-login {
+  font-weight: 500;
+  color: #ffe484;
+  border-color: #ffe484;
+}
+
+.bd-navbar {
+  min-height: 4rem;
+  background-color: #563d7c !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .05), inset 0 -1px 0 rgba(0, 0, 0, .1);
+}
+
+.nav-item{
+  padding: 5px;
+}
