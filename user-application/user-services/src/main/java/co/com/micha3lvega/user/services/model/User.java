@@ -45,6 +45,12 @@ public class User implements Serializable {
 
 	private State state;
 
+	private String clientId;
+
+	private String clientSecret;
+
+	private Security security;
+
 	@CreatedDate
 	private Date createDate;
 

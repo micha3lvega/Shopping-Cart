@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @ApiModel(description = "Usuario del sistema", value = "Usuario")
 @JsonPropertyOrder({ "id", "name", "lastName", "email", "mobile", "password", "roles", "state", "create_date",
-		"last_update" })
+"last_update" })
 public class UserDTO implements Serializable {
 
 	private static final long serialVersionUID = 274033024534254454L;
@@ -59,6 +59,14 @@ public class UserDTO implements Serializable {
 	@NotNull(message = "El rol del usuario es obligatoria")
 	@ApiModelProperty(required = true, value = "Roles del usuario", example = "[CUSTOMER]")
 	private List<RolDTO> roles;
+
+	@ApiModelProperty(required = true, value = "Llave unica para el acceso del cliente a los recursos", example = "aBcksjsnisbow")
+	private String clientId;
+
+	@ApiModelProperty(required = true, value = "Clave secreto para el acceso del cliente a los recursos", example = "aBcksjsnisbow")
+	private String clientSecret;
+
+	private SecurityDTO security;
 
 	@ApiModelProperty(value = "Estado del usuario", example = "ACTIVE")
 	private StateDTO state;
