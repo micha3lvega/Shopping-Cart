@@ -8,6 +8,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Controller
 public class CorsConfig {
 
+	/**
+	 * Configuracion de los cors para los diferentes PATHS
+	 * Aqui se configura para el acceso desde clientes diferentes a los navegadores
+	 * @return
+	 */
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
