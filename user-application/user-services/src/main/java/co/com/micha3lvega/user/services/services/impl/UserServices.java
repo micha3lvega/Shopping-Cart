@@ -9,8 +9,10 @@ import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import co.com.micha3lvega.product.commons.dto.SecurityDTO;
 import co.com.micha3lvega.product.commons.dto.StateDTO;
 import co.com.micha3lvega.product.commons.dto.UserDTO;
+import co.com.micha3lvega.product.commons.util.RandomString;
 import co.com.micha3lvega.user.services.exception.UserEmailExistException;
 import co.com.micha3lvega.user.services.exception.UserInvalidEmailException;
 import co.com.micha3lvega.user.services.exception.UserLoginException;
@@ -31,6 +33,9 @@ public class UserServices implements IUserServices {
 
 	@Autowired
 	private Pbkdf2PasswordEncoder encoder;
+
+	@Autowired
+	private SecurityDTO securityDTO;
 
 	@Override
 	@Transactional(readOnly = true)
@@ -99,6 +104,19 @@ public class UserServices implements IUserServices {
 		if (dto.getState() == null) {
 			dto.setState(StateDTO.ACTIVE);
 		}
+
+		// Estado inicial del objecto de seguridad del usuario
+		dto.setSecurity(securityDTO);
+
+		// Inicializar credenciales
+
+		// Client id
+		RandomString randomString = new RandomString(30);
+		dto.setClientId(randomString.nextString());
+
+		// Client secret
+		randomString = new RandomString(15);
+		dto.setClientSecret(randomString.nextString());
 
 		// Crear el usuario
 		User user = repository.insert(mapper.map(dto, User.class));
@@ -197,7 +215,7 @@ public class UserServices implements IUserServices {
 		if (user == null) {
 			throw new UserNoExistException();
 		}
-		
+
 		return mapper.map(user, UserDTO.class);
 	}
 

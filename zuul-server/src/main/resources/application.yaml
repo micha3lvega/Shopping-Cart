@@ -29,5 +29,8 @@ zuul:
       serviceId: user-services    
     customer:
       path: /customer/**
-      serviceId: customer-services      
+      serviceId: customer-services
+    product:
+      path: /product/**
+      serviceId: product-services      
       
