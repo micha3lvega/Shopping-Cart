@@ -21,18 +21,9 @@ import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-/**
- * Clase encargada de generar el token de autenticacion
- * 
- * @author micha3lvega
- *
- */
 @Component
 public class JWTServiceImpl implements JWTService {
 
-	/**
-	 * Metodo que genera el token
-	 */
 	@Override
 	public Token create(Authentication auth) throws IOException {
 
