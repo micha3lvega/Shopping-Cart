@@ -26,6 +26,10 @@
 		<sonar.jdbc.driver>com.mysql.jdbc.Driver</sonar.jdbc.driver>
 		<jacoco.version>0.7.9</jacoco.version>
 
+		<sonar.coverage.jacoco.xmlReportPaths>
+			${project.basedir}/target/site/jacoco/jacoco.xml
+		</sonar.coverage.jacoco.xmlReportPaths>
+
 	</properties>
 
 	<dependencies>
