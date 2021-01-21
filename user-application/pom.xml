@@ -1,13 +1,22 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>co.com.micha3lvega</groupId>
-  <artifactId>user-application</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>user-application</name>
-  <description>Aplicacion para el manejo de usuarios</description>
-  <modules>
-  	<module>user-commons</module>
-  	<module>user-services</module>
-  </modules>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>co.com.micha3lvega</groupId>
+	<artifactId>user-application</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>user-application</name>
+	<description>Aplicacion para el manejo de usuarios</description>
+
+	<properties>
+		<sonar.project.key>co.com.micha3lvega:user-application</sonar.project.key>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+		<sonar.login>ea4443eba3297c8360ab320f1741c13ac33e6c30</sonar.login>
+	</properties>
+
+	<modules>
+		<module>user-commons</module>
+		<module>user-services</module>
+	</modules>
 </project>
