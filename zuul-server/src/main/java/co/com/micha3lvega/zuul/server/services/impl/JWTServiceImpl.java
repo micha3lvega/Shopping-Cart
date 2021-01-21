@@ -99,11 +99,7 @@ public class JWTServiceImpl implements JWTService {
 		ArrayList<LinkedHashMap<String, String>> roles = (ArrayList<LinkedHashMap<String, String>>) getClaims(token)
 				.get("authorities");
 
-		roles.forEach(rol -> {
-			rol.forEach((key, value) -> {
-				authorities.add(new SimpleGrantedAuthority(value));
-			});
-		});
+		roles.forEach(rol -> rol.forEach((key, value) -> authorities.add(new SimpleGrantedAuthority(value))));
 
 		return authorities;
 
