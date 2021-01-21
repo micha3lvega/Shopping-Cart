@@ -1,13 +1,24 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>co.com.micha3lvega</groupId>
-  <artifactId>country-application</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>country-application</name>
-  <description>Aplicacion para el manejo de los paises</description>
-  <modules>
-  	<module>country-commons</module>
-  	<module>country-services</module>
-  </modules>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>co.com.micha3lvega</groupId>
+	<artifactId>country-application</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>country-application</name>
+	<description>Aplicacion para el manejo de los paises</description>
+
+	<properties>
+
+		<sonar.project.key>co.com.micha3lvega:country-application</sonar.project.key>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+		<sonar.login>1df131b4ba5a5604cd626e50f36de032d6a5d3a7</sonar.login>
+
+	</properties>
+
+	<modules>
+		<module>country-commons</module>
+		<module>country-services</module>
+	</modules>
 </project>
