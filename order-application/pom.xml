@@ -8,6 +8,13 @@
 	<packaging>pom</packaging>
 	<name>order-application</name>
 	<description>Aplicacion para el manejo de las ordenes</description>
+
+	<properties>
+		<sonar.project.key>co.com.micha3lvega:order-application</sonar.project.key>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+		<sonar.login>9fee84f961ce816eee8c4f5129e63c6e7d1ebb78</sonar.login>
+	</properties>
+
 	<modules>
 		<module>order-commons</module>
 		<module>order-services</module>
