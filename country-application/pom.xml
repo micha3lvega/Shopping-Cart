@@ -15,6 +15,17 @@
 		<sonar.host.url>http://localhost:9000</sonar.host.url>
 		<sonar.login>1df131b4ba5a5604cd626e50f36de032d6a5d3a7</sonar.login>
 
+		<sonar.exclusions>
+			**/dto/**,
+			**/model/**,
+			**/config/**,
+			**/exception/**,
+			**/CountryServicesApplication.java
+		</sonar.exclusions>
+		<sonar.coverage.jacoco.xmlReportPaths>
+			${project.basedir}/target/site/jacoco/jacoco.xml
+		</sonar.coverage.jacoco.xmlReportPaths>
+
 	</properties>
 
 	<modules>
