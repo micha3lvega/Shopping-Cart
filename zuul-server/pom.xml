@@ -33,7 +33,7 @@
 
 		<sonar.project.key>co.com.micha3lvega:zuul-server</sonar.project.key>
 		<sonar.host.url>http://localhost:9000</sonar.host.url>
-		<sonar.login>6c14bade21ebd51ecc02b3e7e88b90868771877f</sonar.login>
+		<sonar.login>fcb125c5faede33b24397ed0aab45ef271c369fa</sonar.login>
 	</properties>
 
 	<dependencies>
