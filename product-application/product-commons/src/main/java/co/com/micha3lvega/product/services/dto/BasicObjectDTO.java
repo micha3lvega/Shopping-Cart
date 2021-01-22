@@ -20,7 +20,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "id", "name", "create_date", "last_update" })
-public class BasicObjectDTO implements Serializable{
+public class BasicObjectDTO implements Serializable {
+
+	private static final long serialVersionUID = 2631836423446786531L;
 
 	@ApiModelProperty(required = true, value = "ID de la categoria", example = "5fe56033ebee2c5f3247c47e", accessMode = AccessMode.READ_ONLY)
 	private String id;
