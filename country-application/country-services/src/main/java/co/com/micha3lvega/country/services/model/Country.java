@@ -33,17 +33,17 @@ public class Country implements Serializable {
 
 	private String name;
 
-	private List<String> topLevelDomain = null;
+	private List<String> topLevelDomain;
 
 	private String alpha2Code;
 
 	private String alpha3Code;
 
-	private List<String> callingCodes = null;
+	private List<String> callingCodes;
 
 	private String capital;
 
-	private List<String> altSpellings = null;
+	private List<String> altSpellings;
 
 	private String region;
 
@@ -51,7 +51,7 @@ public class Country implements Serializable {
 
 	private Long population;
 
-	private List<Double> latlng = null;
+	private List<Double> latlng;
 
 	private String demonym;
 
@@ -59,23 +59,23 @@ public class Country implements Serializable {
 
 	private Double gini;
 
-	private List<String> timezones = null;
+	private List<String> timezones;
 
-	private List<String> borders = null;
+	private List<String> borders;
 
 	private String nativeName;
 
 	private String numericCode;
 
-	private List<Currency> currencies = null;
+	private List<Currency> currencies;
 
-	private List<Language> languages = null;
+	private List<Language> languages;
 
 	private Translations translations;
 
 	private String flag;
 
-	private List<RegionalBloc> regionalBlocs = null;
+	private List<RegionalBloc> regionalBlocs;
 
 	private String cioc;
 

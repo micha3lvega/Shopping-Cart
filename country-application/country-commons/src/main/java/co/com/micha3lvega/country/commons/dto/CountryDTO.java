@@ -36,7 +36,7 @@ public class CountryDTO implements Serializable {
 	private String name;
 
 	@JsonProperty("topLevelDomain")
-	private List<String> topLevelDomain = null;
+	private List<String> topLevelDomain;
 
 	@JsonProperty("alpha2Code")
 	private String alpha2Code;
@@ -45,13 +45,13 @@ public class CountryDTO implements Serializable {
 	private String alpha3Code;
 
 	@JsonProperty("callingCodes")
-	private List<String> callingCodes = null;
+	private List<String> callingCodes;
 
 	@JsonProperty("capital")
 	private String capital;
 
 	@JsonProperty("altSpellings")
-	private List<String> altSpellings = null;
+	private List<String> altSpellings;
 
 	@JsonProperty("region")
 	private String region;
@@ -63,7 +63,7 @@ public class CountryDTO implements Serializable {
 	private Long population;
 
 	@JsonProperty("latlng")
-	private List<Double> latlng = null;
+	private List<Double> latlng;
 
 	@JsonProperty("demonym")
 	private String demonym;
@@ -75,10 +75,10 @@ public class CountryDTO implements Serializable {
 	private Double gini;
 
 	@JsonProperty("timezones")
-	private List<String> timezones = null;
+	private List<String> timezones;
 
 	@JsonProperty("borders")
-	private List<String> borders = null;
+	private List<String> borders;
 
 	@JsonProperty("nativeName")
 	private String nativeName;
@@ -87,10 +87,10 @@ public class CountryDTO implements Serializable {
 	private String numericCode;
 
 	@JsonProperty("currencies")
-	private List<CurrencyDTO> currencies = null;
+	private List<CurrencyDTO> currencies;
 
 	@JsonProperty("languages")
-	private List<LanguageDTO> languages = null;
+	private List<LanguageDTO> languages;
 
 	@JsonProperty("translations")
 	private TranslationsDTO translations;
@@ -99,7 +99,7 @@ public class CountryDTO implements Serializable {
 	private String flag;
 
 	@JsonProperty("regionalBlocs")
-	private List<RegionalBlocDTO> regionalBlocs = null;
+	private List<RegionalBlocDTO> regionalBlocs;
 
 	@JsonProperty("cioc")
 	private String cioc;
