@@ -267,7 +267,18 @@ class CountryServicesTest {
 		List<CountryDTO> countries = new ArrayList<>();
 
 		for (int i = 0; i < countriesToCreate; i++) {
-			countries.add(createCountry());
+
+			// Pais que se va a crear
+			String jsonString = util.readFile(pathCountry);
+			Gson gson = new Gson();
+			CountryDTO newCountry = gson.fromJson(jsonString, CountryDTO.class);
+			log.trace("(saveAllSuccess) Nuevo pais: {}", newCountry);
+
+			// Cambiar el nombre del pais por uno aleatorio
+			newCountry.setName("new country [" + System.currentTimeMillis() + "]");
+
+			countries.add(newCountry);
+
 		}
 
 		// Guardar los paises
