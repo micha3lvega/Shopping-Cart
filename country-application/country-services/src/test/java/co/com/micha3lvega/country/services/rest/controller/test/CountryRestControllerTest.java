@@ -89,15 +89,16 @@ class CountryRestControllerTest {
 
 		// Crear el pais
 		CountryDTO country = createCountry();
+		log.debug("(testFindById) country encontrado: {}", country);
 		assertNotNull(country);
 		assertNotNull(country.getId());
 
 		String url = "http://localhost:" + port + path + "/" + country.getId();
-		log.debug("(findAllSuccess) url: {}", url);
+		log.debug("(testFindById) url: {}", url);
 
 		// Buscar el pais
 		country = restTemplate.getForObject(url, CountryDTO.class);
-		log.debug("(findAllSuccess) country: {}", country);
+		log.debug("(testFindById) country encontrado: {}", country);
 		assertNotNull(country);
 		assertNotNull(country.getId());
 
