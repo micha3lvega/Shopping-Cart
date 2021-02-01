@@ -60,11 +60,13 @@ class CustomerServicesTest {
 	}
 
 	/**
-	 * Test method for
+	 * Prueba para el metodo
 	 * {@link co.com.micha3lvega.customer.services.services.impl.CustomerServices#findAll()}.
+	 * se obtienen todos los cliente, se crea uno nuevo y se vuelven a obtener todos
+	 * los clientes para validar que se aumenten los clientes
 	 */
 	@Test
-	@DisplayName("[testFindAll] Prueba de los metodos: [findAll], expected ok")
+	@DisplayName("[testFindAll] Prueba de los metodos: [findAll,create], expected ok")
 	void testFindAll() {
 
 		log.info("(testFindAll) [[start]]");
@@ -93,11 +95,12 @@ class CustomerServicesTest {
 	}
 
 	/**
-	 * Test method for
+	 * Prueba para el metodo
 	 * {@link co.com.micha3lvega.customer.services.services.impl.CustomerServices#findByID(java.lang.String)}.
+	 * Se crea un cliente y luego se obtiene por el id
 	 */
 	@Test
-	@DisplayName("[testFindByID] Prueba de los metodos: [findByID], expected ok")
+	@DisplayName("[testFindByID] Prueba de los metodos: [create, findByID], expected ok")
 	void testFindByID() {
 
 		log.info("(testFindByID) [[start]]");
@@ -126,10 +129,12 @@ class CustomerServicesTest {
 	}
 
 	/**
-	 * Test method for
+	 * Prueba para el metodo
 	 * {@link co.com.micha3lvega.customer.services.services.impl.CustomerServices#create(co.com.micha3lvega.customer.commons.dto.CustomerDTO)}.
+	 * Se valida que se cree un cliente
 	 */
 	@Test
+	@DisplayName("[testFindByID] Prueba de los metodos: [create], expected ok")
 	void testCreate() {
 
 		log.info("(testCreate) [[start]]");
@@ -148,9 +153,12 @@ class CustomerServicesTest {
 	}
 
 	/**
-	 * Test method for
+	 * Prueba para el metodo
 	 * {@link co.com.micha3lvega.customer.services.services.impl.CustomerServices#create(co.com.micha3lvega.customer.commons.dto.CustomerDTO)}.
+	 * Se valida que al tratar de crear un cliente nulo o con el usuario nulo
+	 * retorne una excepcion de tipo {@link CustomerInvalidInformacionException}
 	 */
+	@DisplayName("[testFindByID] Prueba de los metodos: [create], expected error")
 	void testErrorCreate() {
 
 		log.info("(testErrorCreate) [[start]]");
@@ -173,10 +181,13 @@ class CustomerServicesTest {
 	}
 
 	/**
-	 * Test method for
+	 * Prueba del metodo
 	 * {@link co.com.micha3lvega.customer.services.services.impl.CustomerServices#update(co.com.micha3lvega.customer.commons.dto.CustomerDTO)}.
+	 * Se crea un usuario, se actualiza el nombre luego se busca por el ID y se
+	 * valida que el nombre se haya actualizado
 	 */
 	@Test
+	@DisplayName("[testFindByID] Prueba de los metodos: [create, update, findById], expected ok")
 	void testUpdate() {
 
 		log.info("(testUpdate) [[start]]");
