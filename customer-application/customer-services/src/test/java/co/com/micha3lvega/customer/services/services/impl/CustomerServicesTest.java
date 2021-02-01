@@ -5,6 +5,7 @@ package co.com.micha3lvega.customer.services.services.impl;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.google.gson.Gson;
 
 import co.com.micha3lvega.customer.commons.dto.CustomerDTO;
+import co.com.micha3lvega.customer.services.exception.CustomerInvalidInformacionException;
 import co.com.micha3lvega.customer.services.util.Util;
 
 /**
@@ -143,6 +145,31 @@ class CustomerServicesTest {
 
 		log.info("(testCreate) [[success]]");
 
+	}
+
+	/**
+	 * Test method for
+	 * {@link co.com.micha3lvega.customer.services.services.impl.CustomerServices#create(co.com.micha3lvega.customer.commons.dto.CustomerDTO)}.
+	 */
+	void testErrorCreate() {
+
+		log.info("(testErrorCreate) [[start]]");
+
+		// Probar cuando el objecto se envia nulo
+		assertThrows(CustomerInvalidInformacionException.class, () -> {
+			services.create(null);
+		});
+
+		CustomerDTO customer = new CustomerDTO();
+		customer.setUser(null);
+
+		// Probar cuando el usuario se envia nulo
+		assertThrows(CustomerInvalidInformacionException.class, () -> {
+
+			services.create(customer);
+		});
+
+		log.info("(testErrorCreate) [[success]]");
 	}
 
 	/**
