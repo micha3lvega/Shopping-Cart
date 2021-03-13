@@ -8,6 +8,13 @@
 	<packaging>pom</packaging>
 	<name>product-application</name>
 	<description>Proyecto para la administracion de productos</description>
+
+	<properties>
+		<sonar.project.key>co.com.micha3lvega:product-application</sonar.project.key>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+		<sonar.login>cf8718fb581cd69dabec797562405b2d07190408</sonar.login>
+	</properties>
+
 	<modules>
 		<module>product-commons</module>
 		<module>product-services</module>

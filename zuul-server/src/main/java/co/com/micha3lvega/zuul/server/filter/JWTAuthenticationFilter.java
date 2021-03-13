@@ -47,8 +47,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 	 * Metodo que se ejecuta al momento de un intento de autenticacion
 	 */
 	@Override
-	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
-			throws AuthenticationException {
+	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) {
 
 		String username = obtainUsername(request);
 		String password = obtainPassword(request);

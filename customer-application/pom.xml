@@ -9,6 +9,27 @@
 	<name>customer-application</name>
 	<description>Aplicacion para la administracion de los servicios de los
 		clientes</description>
+
+	<properties>
+
+		<sonar.project.key>co.com.micha3lvega:customer-application</sonar.project.key>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+		<sonar.login>e283ca4c85fb9f03e643fa28b8c4c4fc46d3251d</sonar.login>
+
+		<sonar.exclusions>
+			**/dto/**,
+			**/model/**,
+			**/config/**,
+			**/exception/**,
+			**/CustomerServicesApplication.java
+		</sonar.exclusions>
+		<sonar.coverage.jacoco.xmlReportPaths>
+			${project.basedir}/target/site/jacoco/jacoco.xml
+		</sonar.coverage.jacoco.xmlReportPaths>
+
+
+	</properties>
+
 	<modules>
 		<module>customer-commons</module>
 		<module>customer-services</module>

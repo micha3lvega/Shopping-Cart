@@ -37,6 +37,11 @@ public class CountryServices implements ICountryServices {
 	@Transactional(readOnly = true)
 	public CountryDTO findById(String id) {
 
+		// validar que el objecto tenga un id
+		if (id == null || id.isEmpty()) {
+			throw new CountryNotExistsExcepction();
+		}
+
 		// Buscar el pais si no existe retornar una excepcion
 		Country country = repository.findById(id).orElseThrow(CountryNotExistsExcepction::new);
 		return mapper.map(country, CountryDTO.class);
@@ -56,6 +61,16 @@ public class CountryServices implements ICountryServices {
 	@Override
 	@Transactional
 	public CountryDTO update(CountryDTO country) {
+
+		// validar que el objecto tenga un id
+		if (country == null || country.getId().isEmpty()) {
+			throw new CountryNotExistsExcepction();
+		}
+
+		// Buscar el pais si no existe retornar una excepcion
+		if (!repository.findById(country.getId()).isPresent()) {
+			throw new CountryNotExistsExcepction();
+		}
 
 		// actualizar el pais
 		Country updateCountry = repository.save(mapper.map(country, Country.class));

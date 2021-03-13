@@ -8,6 +8,13 @@
 	<packaging>pom</packaging>
 	<name>shopping-cart-application</name>
 	<description>Aplicacion para el manejo de los servicios del carrito de compras</description>
+
+	<properties>
+		<sonar.project.key>co.com.micha3lvega:shopping-cart-application</sonar.project.key>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+		<sonar.login>1b3d1c0fd1e95a87753032ec9248b65b697b3fdf</sonar.login>
+	</properties>
+
 	<modules>
 		<module>shopping-cart-commons</module>
 		<module>shopping-cart-services</module>
