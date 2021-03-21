@@ -9,6 +9,13 @@
 	<description>Aplicacion para el manejo de los objectos comunes para los
 		servicios de clientes</description>
 
+	<properties>
+		<!-- java -->
+		<java.version>1.8</java.version>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
