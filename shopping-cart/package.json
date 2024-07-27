@@ -21,7 +21,7 @@
     "@angular/router": "~11.2.3",
     "@popperjs/core": "^2.6.0",
     "@sweetalert2/ngx-sweetalert2": "^9.0.0",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^5.0.0",
     "jquery": "^3.5.1",
     "rxjs": "~6.6.0",
     "sweetalert2": "^10.13.0",
